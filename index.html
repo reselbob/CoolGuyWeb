@@ -1,15 +1,16 @@
 <link rel="stylesheet" href="style.css">
 
 <div class="top-banner-wrap">
-  <img
-    class="top-banner-img"
-    alt="Top banner"
-    src="https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000"
-    srcset="
-      https://drive.google.com/thumbnail?id=1R88VVuw7eqm602jtpkMce7X5csey99cW&sz=w1200 600w,
-      https://drive.google.com/thumbnail?id=1EGhzAYB8l8eldov6v58xT0RC-BRGcKfI&sz=w1600 1024w,
-      https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000 1600w
-    "
-    sizes="100vw"
-  >
+  <picture>
+    <source
+      media="(max-width: 599px)"
+      srcset="https://drive.google.com/thumbnail?id=1R88VVuw7eqm602jtpkMce7X5csey99cW&sz=w1200">
+    <source
+      media="(max-width: 1023px)"
+      srcset="https://drive.google.com/thumbnail?id=1EGhzAYB8l8eldov6v58xT0RC-BRGcKfI&sz=w1600">
+    <img
+      class="top-banner-img"
+      alt="Top banner"
+      src="https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000">
+  </picture>
 </div>
