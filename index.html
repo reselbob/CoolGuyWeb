@@ -1,60 +1,15 @@
-    <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="style.css">
 
 <div class="top-banner-wrap">
-  <img id="responsiveTopBanner" class="top-banner-img" alt="Top banner">
+  <img
+    class="top-banner-img"
+    alt="Top banner"
+    src="https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000"
+    srcset="
+      https://drive.google.com/thumbnail?id=1R88VVuw7eqm602jtpkMce7X5csey99cW&sz=w1200 600w,
+      https://drive.google.com/thumbnail?id=1EGhzAYB8l8eldov6v58xT0RC-BRGcKfI&sz=w1600 1024w,
+      https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000 1600w
+    "
+    sizes="100vw"
+  >
 </div>
-
-<script>
-  (function () {
-    var img = document.getElementById('responsiveTopBanner');
-
-    // For each device, list multiple URL formats; the onerror handler
-    // walks down the list until one actually loads.
-    var urls = {
-      cell: [
-        'https://drive.google.com/thumbnail?id=1R88VVuw7eqm602jtpkMce7X5csey99cW&sz=w1200',
-        'https://lh3.googleusercontent.com/d/1R88VVuw7eqm602jtpkMce7X5csey99cW=w1200'
-      ],
-      tablet: [
-        'https://drive.google.com/thumbnail?id=1EGhzAYB8l8eldov6v58xT0RC-BRGcKfI&sz=w1600',
-        'https://lh3.googleusercontent.com/d/1EGhzAYB8l8eldov6v58xT0RC-BRGcKfI=w1600'
-      ],
-      web: [
-        'https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000',
-        'https://lh3.googleusercontent.com/d/1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26=s4000'
-      ]
-    };
-
-    function deviceWidth() {
-      // screen.width is the real device screen width, even inside an iframe.
-      var sw = window.screen && window.screen.width ? window.screen.width : 0;
-      var iw = window.innerWidth || document.documentElement.clientWidth || 0;
-      // On desktop the embed iframe (iw) is usually narrower than the screen;
-      // take the larger of the two so the device is detected correctly.
-      return Math.max(sw, iw);
-    }
-
-    function pickKey(w) {
-      if (w < 600) return 'cell';
-      if (w < 1024) return 'tablet';
-      return 'web';
-    }
-
-    function load(key, index) {
-      var list = urls[key];
-      if (!list || index >= list.length) return;
-      img.onerror = function () { load(key, index + 1); };
-      img.onload  = function () { img.onerror = null; };
-      img.src = list[index];
-    }
-
-    function setBanner() {
-      load(pickKey(deviceWidth()), 0);
-    }
-
-    setBanner();
-    window.addEventListener('resize', setBanner);
-    window.addEventListener('orientationchange', setBanner);
-  })();
-</script>
