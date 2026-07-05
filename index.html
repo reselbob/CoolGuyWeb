@@ -1,16 +1,42 @@
 <link rel="stylesheet" href="style.css">
 
 <div class="top-banner-wrap">
-  <picture>
-    <source
-      media="(max-width: 599px)"
-      srcset="https://drive.google.com/thumbnail?id=1R88VVuw7eqm602jtpkMce7X5csey99cW&sz=w1200">
-    <source
-      media="(max-width: 1023px)"
-      srcset="https://drive.google.com/thumbnail?id=1EGhzAYB8l8eldov6v58xT0RC-BRGcKfI&sz=w1600">
-    <img
-      class="top-banner-img"
-      alt="Top banner"
-      src="https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000">
-  </picture>
+  <img
+    id="topBanner"
+    class="top-banner-img"
+    alt="Top banner"
+    data-cell="https://drive.google.com/thumbnail?id=1R88VVuw7eqm602jtpkMce7X5csey99cW&sz=w1200"
+    data-tablet="https://drive.google.com/thumbnail?id=1EGhzAYB8l8eldov6v58xT0RC-BRGcKfI&sz=w1600"
+    data-web="https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000"
+    src="https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000"
+  >
 </div>
+
+<script>
+  (function () {
+    const img = document.getElementById('topBanner');
+    let current = '';
+
+    function getKey() {
+      const w = window.innerWidth || document.documentElement.clientWidth;
+      if (w <= 599) return 'cell';
+      if (w <= 1023) return 'tablet';
+      return 'web';
+    }
+
+    function swapImage() {
+      const key = getKey();
+      if (key === current) return;
+
+      current = key;
+      const nextSrc = img.dataset[key];
+      if (nextSrc && img.src !== nextSrc) {
+        img.src = nextSrc;
+      }
+    }
+
+    swapImage();
+    window.addEventListener('resize', swapImage);
+    window.addEventListener('orientationchange', swapImage);
+  })();
+</script>
