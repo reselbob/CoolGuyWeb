@@ -5,10 +5,10 @@
     id="topBanner"
     class="top-banner-img"
     alt="Top banner"
-    data-cell="https://drive.google.com/thumbnail?id=1R88VVuw7eqm602jtpkMce7X5csey99cW&sz=w1200"
-    data-tablet="https://drive.google.com/thumbnail?id=1EGhzAYB8l8eldov6v58xT0RC-BRGcKfI&sz=w1600"
-    data-web="https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000"
-    src="https://drive.google.com/thumbnail?id=1PAWjZb2t6IKOaI9-IX0994KWd0EnJt26&sz=s4000"
+    data-cell="./cell-phone-02.jpg"
+    data-tablet="./banner-table-01.jpg"
+    data-web="./web-banner-02.jpg"
+    src="./web-banner-02.jpg"
   >
 </div>
 
@@ -30,8 +30,8 @@
 
       current = key;
       const nextSrc = img.dataset[key];
-      if (nextSrc && img.src !== nextSrc) {
-        img.src = nextSrc;
+      if (nextSrc && img.getAttribute('src') !== nextSrc) {
+        img.setAttribute('src', nextSrc);
       }
     }
 
