@@ -4,7 +4,13 @@ body {
   padding: 0;
 }
 
+body {
+  background: #ececf1;
+}
+
 .top-banner-wrap {
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 
@@ -12,4 +18,6 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  margin: 0;
+  padding: 0;
 }
