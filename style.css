@@ -9,3 +9,12 @@ img {
   border-radius: 10px;
   margin-top: 20px;
 }
+.top-banner-wrap {
+  width: 100%;
+}
+
+.top-banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
