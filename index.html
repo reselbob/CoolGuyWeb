@@ -1,45 +1,52 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="top-banner-wrap">
-  <img
-    id="topBanner"
-    class="top-banner-img"
-    alt="Top banner"
-    data-cell="./cell-phone-02.jpg"
-    data-tablet="./banner-table-01.jpg"
-    data-web="./web-banner-02.jpg"
-    src="./web-banner-02.jpg"
-  >
-</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>CoolGuyWeb</title>
+</head>
 
-<div>
-  CALL or TEXT: 213 725 1301
-</div>
-<script>
-  (function () {
-    const img = document.getElementById('topBanner');
-    let current = '';
+<body>
 
-    function getKey() {
-      const w = window.innerWidth || document.documentElement.clientWidth;
-      if (w <= 599) return 'cell';
-      if (w <= 1023) return 'tablet';
-      return 'web';
-    }
+  <div class="top-banner-wrap">
+    <img id="topBanner" class="top-banner-img" alt="Top banner" data-cell="./cell-phone-02.png"
+      data-tablet="./banner-tablet-01.png" data-web="./web-banner-02.png" src="./web-banner-02.png">
+  </div>
 
-    function swapImage() {
-      const key = getKey();
-      if (key === current) return;
+  <div class="phone-contact">
+    CALL or TEXT: 213-725-1301
+  </div>
+  <script>
+    (function () {
+      const img = document.getElementById('topBanner');
+      let current = '';
 
-      current = key;
-      const nextSrc = img.dataset[key];
-      if (nextSrc && img.getAttribute('src') !== nextSrc) {
-        img.setAttribute('src', nextSrc);
+      function getKey() {
+        const w = window.innerWidth || document.documentElement.clientWidth;
+        if (w <= 599) return 'cell';
+        if (w <= 1023) return 'tablet';
+        return 'web';
       }
-    }
 
-    swapImage();
-    window.addEventListener('resize', swapImage);
-    window.addEventListener('orientationchange', swapImage);
-  })();
-</script>
+      function swapImage() {
+        const key = getKey();
+        if (key === current) return;
+
+        current = key;
+        const nextSrc = img.dataset[key];
+        if (nextSrc && img.getAttribute('src') !== nextSrc) {
+          img.setAttribute('src', nextSrc);
+        }
+      }
+
+      swapImage();
+      window.addEventListener('resize', swapImage);
+      window.addEventListener('orientationchange', swapImage);
+    })();
+  </script>
+
+</body>
+
+</html>

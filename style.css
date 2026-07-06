@@ -2,10 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-}
-
-body {
-  background: #ececf1;
+  background: #f4e8d5;
 }
 
 .top-banner-wrap {
@@ -20,4 +17,14 @@ body {
   height: auto;
   margin: 0;
   padding: 0;
+}
+
+.phone-contact {
+  width: 100%;
+  background-color: #f4e8d5;
+  color: #000000;
+  text-align: center;
+  padding: 10px;
+  font-size: clamp(1.2rem, 4vw, 3rem);
+  font-family: 'Montserrat', sans-serif;
 }
