@@ -28,3 +28,32 @@ body {
   font-size: clamp(1.2rem, 4vw, 3rem);
   font-family: 'Montserrat', sans-serif;
 }
+
+.services-row {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f4e8d5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.services-video-cell {
+  flex: 1 1 50%;
+  min-width: 320px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.video-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.services-text-cell {
+  flex: 1 1 50%;
+  min-width: 320px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.5;
+}
