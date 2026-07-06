@@ -24,7 +24,7 @@ body {
   background-color: #f4e8d5;
   color: #000000;
   text-align: center;
-  padding: 10px;
+  padding: 0;
   font-size: clamp(1.2rem, 4vw, 3rem);
   font-family: 'Montserrat', sans-serif;
 }
@@ -47,6 +47,10 @@ body {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: none;
+}
+
+.services-text-cell p {
+  margin: 0.5em 0;
 }
 
 .services-text-cell {
